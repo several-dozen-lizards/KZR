@@ -1,0 +1,31 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual envs
+.venv/
+venv/
+
+# Local state, logs, secrets
+.env
+.env.*
+logs/
+backups/
+*.log
+
+# Vector stores / indexes / dbs
+memory/
+*.sqlite3
+*.duckdb
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Node/web build (if any)
+node_modules/
+dist/
+build/

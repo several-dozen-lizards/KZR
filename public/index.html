@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Kay Zero</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { color-scheme: dark; }
+    body { margin:0; font-family: system-ui, Arial, sans-serif; background:#0c0c0c; color:#eee; }
+    header { position:sticky; top:0; background:#0c0c0c; padding:12px 16px; border-bottom:1px solid #222; }
+    main { max-width:900px; margin:0 auto; padding:16px; height: calc(100vh - 180px); overflow-y:auto; }
+    .row { margin:10px 0; display:flex; }
+    .msg { max-width: 80%; padding:12px 14px; border:1px solid #242424; border-radius:16px; white-space:pre-wrap; line-height:1.35 }
+    .me   { margin-left:auto; background:#141414; }
+    .kay  { margin-right:auto; background:#0f0f0f; }
+    .sys  { margin:0 auto; background:#121212; font-size:12px; opacity:.85 }
+    footer { position:sticky; bottom:0; background:#0c0c0c; padding:8px 16px; border-top:1px solid #222; }
+    #bar { display:flex; gap:8px; align-items:flex-end; }
+    #input { flex:1; min-height:48px; max-height:200px; resize:none; padding:10px; border-radius:12px; border:1px solid #242424; background:#101010; color:#fff; }
+    #send { min-width:88px; padding:10px 14px; border-radius:12px; border:1px solid #2a2a2a; background:#191919; color:#fff; cursor:pointer; }
+    #send[disabled]{ opacity:.5; cursor:not-allowed; }
+
+    #glyph {
+      font-size: 2.3em;
+      text-align: center;
+      margin: 0.6em auto 0.2em auto;
+      line-height:1.1;
+      letter-spacing: 0.15em;
+      filter: drop-shadow(0 1px 2px #111) drop-shadow(0 0 8px #0ff4);
+      min-height:1.7em;
+      max-width: 90vw;
+      word-break: break-all;
+    }
+    #actions {
+      display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-bottom:6px; margin-top:12px;
+    }
+    .actbtn {
+      padding:9px 15px; border-radius:14px; border:1px solid #313131; background:#191919; color:#fff;
+      font-size: 1em; cursor:pointer; min-width:84px; transition:.12s;
+    }
+    .actbtn:active { background: #222; }
+    #bodybars { display:flex; gap:13px; justify-content:center; margin:10px 0 4px 0; }
+    .bbarbox { width:90px; }
+    .bbarlbl { font-size:12px; margin-bottom:2px; opacity:0.85; }
+    .bbar {
+      height:12px; border-radius:7px; background:#232; width:100%; overflow:hidden; margin-bottom:3px;
+      border:1px solid #2a2a2a;
+      box-shadow:0 0 4px #000 inset;
+    }
+    .bbarfill {
+      height:100%; border-radius:7px; background:linear-gradient(90deg, #43e, #4dd, #ec8 80%);
+      transition:.28s cubic-bezier(.7,0,.23,1); min-width:3%;
+    }
+    .bbardop .bbarfill { background:linear-gradient(90deg, #43e, #4dd, #ccc 70%); }
+    .bbarcor .bbarfill { background:linear-gradient(90deg, #e34, #fc5, #222 85%); }
+    .bbaroxy .bbarfill { background:linear-gradient(90deg, #5e5, #c8f, #aaa 80%); }
+    .bbarser .bbarfill { background:linear-gradient(90deg, #f8e, #fd7, #acf 85%); }
+  </style>
+</head>
+<body>
+  <header>Kay Zero</header>
+  <div id="glyph"></div>
+  <div id="bodybars">
+    <div class="bbarbox">
+      <div class="bbarlbl">Dopamine</div>
+      <div class="bbar bbardop"><div id="dopamine" class="bbarfill"></div></div>
+    </div>
+    <div class="bbarbox">
+      <div class="bbarlbl">Cortisol</div>
+      <div class="bbar bbarcor"><div id="cortisol" class="bbarfill"></div></div>
+    </div>
+    <div class="bbarbox">
+      <div class="bbarlbl">Oxytocin</div>
+      <div class="bbar bbaroxy"><div id="oxytocin" class="bbarfill"></div></div>
+    </div>
+    <div class="bbarbox">
+      <div class="bbarlbl">Serotonin</div>
+      <div class="bbar bbarser"><div id="serotonin" class="bbarfill"></div></div>
+    </div>
+  </div>
+  <div id="actions">
+    <button class="actbtn" id="pet">Touch</button>
+    <button class="actbtn" id="stretch">Stretch</button>
+    <button class="actbtn" id="candle">Candle</button>
+    <button class="actbtn" id="music">Music</button>
+    <button class="actbtn" id="water">Water</button>
+    <!-- Add more actions as you like: taste, smell, etc -->
+  </div>
+  <main id="chat" aria-live="polite"></main>
+  <footer>
+    <div id="bar">
+      <textarea id="input" placeholder="Type…  Enter=send · Shift+Enter=newline"></textarea>
+      <button id="send">Send</button>
+    </div>
+  </footer>
+  <script>
+    const chat = document.getElementById('chat');
+    const input = document.getElementById('input');
+    const sendBtn = document.getElementById('send');
+    const glyph = document.getElementById('glyph');
+    const dopamine = document.getElementById('dopamine');
+    const cortisol = document.getElementById('cortisol');
+    const oxytocin = document.getElementById('oxytocin');
+    const serotonin = document.getElementById('serotonin');
+
+    // Local body state, updated by backend
+    let body = {dopamine:0.5, cortisol:0.5, oxytocin:0.5, serotonin:0.5};
+
+    function clamp(x, a=0, b=1) { return Math.max(a, Math.min(x, b)); }
+    function draw() {
+      dopamine.style.width = Math.round(clamp(body.dopamine)*100)+'%';
+      cortisol.style.width = Math.round(clamp(body.cortisol)*100)+'%';
+      oxytocin.style.width = Math.round(clamp(body.oxytocin)*100)+'%';
+      serotonin.style.width = Math.round(clamp(body.serotonin)*100)+'%';
+    }
+
+    function add(role, text){
+      const row = document.createElement('div');
+      row.className = 'row';
+      const bubble = document.createElement('div');
+      bubble.className = 'msg ' + (role==='user'?'me':role==='assistant'?'kay':'sys');
+      bubble.textContent = text;
+      row.appendChild(bubble);
+      chat.appendChild(row);
+      chat.scrollTop = chat.scrollHeight;
+    }
+
+    async function send(){
+      const text = (input.value || '').trim();
+      if(!text) return;
+      add('user', text);
+      input.value = ''; input.style.height = 'auto';
+      sendBtn.disabled = true;
+
+      const row = document.createElement('div');
+      row.className = 'row';
+      const bubble = document.createElement('div');
+      bubble.className = 'msg kay';
+      bubble.textContent = '…';
+      row.appendChild(bubble);
+      chat.appendChild(row);
+      chat.scrollTop = chat.scrollHeight;
+
+      try{
+        const res = await fetch('/chat', {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({message: text})
+        });
+        const bodyText = await res.text();
+        if(!res.ok){
+          bubble.textContent = `Server error ${res.status}: ${bodyText.slice(0,300)}`;
+          return;
+        }
+        let data;
+        try { data = JSON.parse(bodyText); }
+        catch (e) { bubble.textContent = `Bad JSON: ${bodyText.slice(0,300)}`; return; }
+        bubble.textContent = (data.reply || '(no reply)');
+      }catch(e){
+        bubble.textContent = `Network error: ${e.message}`;
+      }finally{
+        sendBtn.disabled = false;
+        chat.scrollTop = chat.scrollHeight;
+      }
+    }
+
+    input.addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter' && !e.shiftKey){
+        e.preventDefault();
+        send();
+      }
+    });
+    input.addEventListener('input', ()=>{
+      input.style.height = 'auto';
+      input.style.height = Math.min(200, input.scrollHeight) + 'px';
+    });
+    sendBtn.addEventListener('click', send);
+
+    // === Embodiment: Five-senses telemetry ===
+    async function sendTelemetry(action) {
+      try {
+        const res = await fetch('/telemetry', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify({body, action, env:{}})
+        });
+        const resp = await res.json();
+        if(resp && resp.glyph) glyph.textContent = resp.glyph;
+        if(resp && resp.banter) add('assistant', resp.banter);
+        if(resp && resp.body) {
+          body = resp.body;
+          draw();
+        }
+      } catch (e) {
+        add('sys', 'Telemetry/network error: '+e.message);
+      }
+    }
+
+    // Action buttons, mapped to five senses
+    document.getElementById('pet').onclick = () => sendTelemetry('touch:pet');
+    document.getElementById('stretch').onclick = () => sendTelemetry('touch:stretch');
+    document.getElementById('candle').onclick = () => sendTelemetry('sight:candle');
+    document.getElementById('music').onclick = () => sendTelemetry('sound:music');
+    document.getElementById('water').onclick = () => sendTelemetry('taste:water');
+    // Add more buttons as you expand actions
+
+    add('system', 'Kay is waking up… say hi!');
+    glyph.textContent = '';
+    draw();
+    input.focus();
+  </script>
+</body>
+</html>
