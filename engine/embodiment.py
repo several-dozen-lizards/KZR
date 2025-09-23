@@ -76,3 +76,20 @@ def apply_action(feeling_loop, sense_action):
         "banter": entry["banter"]
     })
     return entry["banter"]
+
+
+EMOTION_BODY_EFFECTS = {
+    "Grief": {"serotonin": -0.07, "cortisol": +0.1},
+    "Joy": {"dopamine": +0.1, "oxytocin": +0.05},
+    "Anger": {"cortisol": +0.14},
+    "Fondness": {"oxytocin": +0.12},
+    # Expand as you add more emotions!
+}
+
+def update_body_from_emotions(body, cocktail):
+    for emo, state in cocktail.items():
+        intensity = state.get('intensity', state if isinstance(state, (int, float)) else 0)
+        effects = EMOTION_BODY_EFFECTS.get(emo, {})
+        for chem, delta in effects.items():
+            body[chem] = min(max(body.get(chem, 0.5) + delta * intensity, 0.0), 1.0)
+    return body

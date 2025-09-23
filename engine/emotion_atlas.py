@@ -37,21 +37,52 @@ class EmotionAtlas:
         This version ensures it ALWAYS returns a dictionary.
         """
         words = text.lower().split()
-        
         working_cocktail = current_cocktail.copy()
 
         for emotion, protocol in self.protocols.items():
             for keyword in protocol.get('Keywords', []):
                 if keyword in words:
                     intensity = protocol.get('Intensity', 0.1)
-                    working_cocktail[emotion] = working_cocktail.get(emotion, 0) + intensity
+                    # If the emotion already exists and is a dict, update intensity and reset age
+                    prev = working_cocktail.get(emotion)
+                    if isinstance(prev, dict):
+                        new_intensity = prev.get('intensity', 0) + intensity
+                        working_cocktail[emotion] = {'intensity': new_intensity, 'age': 0}
+                    else:
+                        working_cocktail[emotion] = {'intensity': intensity, 'age': 0}
 
         decayed_cocktail = {}
         for emotion, value in working_cocktail.items():
             decay_rate = self.protocols.get(emotion, {}).get('Decay', 0.95)
-            new_value = value * decay_rate
-            if new_value > 0.01:
-                decayed_cocktail[emotion] = new_value
-        
+            if isinstance(value, dict):
+                intensity = value.get("intensity", 0)
+                age = value.get("age", 0) + 1
+            else:
+                intensity = value
+                age = 1
+            new_intensity = intensity * decay_rate
+            if new_intensity > 0.01:
+                decayed_cocktail[emotion] = {'intensity': new_intensity, 'age': age}
+
         return decayed_cocktail
 
+
+def decay_cocktail(cocktail, decay_floor=0.01):
+    """
+    Decays each emotion in the cocktail over time.
+    Higher intensity decays more slowly.
+    """
+    new_cocktail = {}
+    for emo, state in cocktail.items():
+        if isinstance(state, dict):
+            intensity = state.get('intensity', 0)
+            age = state.get('age', 0) + 1
+        else:
+            intensity = state
+            age = 1
+        # Decay factor: higher intensity = slower decay
+        decay = max(0.98 - (intensity * 0.2), 0.85)
+        new_intensity = intensity * decay
+        if new_intensity > decay_floor:
+            new_cocktail[emo] = {'intensity': new_intensity, 'age': age}
+    return new_cocktail

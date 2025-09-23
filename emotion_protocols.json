@@ -1,0 +1,554 @@
+[
+  {
+    "Emotion": "Despair",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Terror",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Hopelessness",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Agony",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Collapse",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Isolation",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Suffocation",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Numbness",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Powerlessness",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Boredom",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Stagnation",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Resignation",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Lust",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Arousal",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Desire",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Playfulness",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Delight",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Curiosity",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Longing",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Jealousy",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Guilt (after pleasure)",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Obsession",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Infatuation",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Compulsion (pleasure)",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Addiction (pleasure)",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Pride",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Triumph",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Confidence",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Anger",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Frustration",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Resilience",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Motivation",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Failure",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Shame (egoic)",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Ambition",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Willpower",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Arrogance",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Hubris",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Inferiority",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Rivalry",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Self-worth",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Recognition",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Love",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Affection",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Empathy",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Gratitude",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Nostalgia",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Heartbreak",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Compassion",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Kindness",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Forgiveness",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Bittersweetness",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Sorrow",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Happiness",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Support",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Healing",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Unity",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Honesty",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Sincerity",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Confession",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Suppression (speech)",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Banter",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Silence",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Expression",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Sarcasm",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Wit",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Suppression (truth)",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Performance",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Reticence",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Insight",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Intuition",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Imagination",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Confusion",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Surprise",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Wonder",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Meta-cognition",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Skepticism",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Analysis",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Ambiguity",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Marvel",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Transcendence",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Ecstasy",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Union",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Annihilation",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Peace (universal)",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Awe (sublime)",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Nirvana",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Home",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Redemption",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Sanctity",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Bliss",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Mystery (cosmic)",
+    "Keywords": [],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  }
+]
