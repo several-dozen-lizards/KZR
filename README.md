@@ -1,29 +1,30 @@
+# KZR - Kay Zero Rebuild
 
-# Kay Zero — Fresh Rebuild with Vault + Logs
+KZR is a conversational AI with an emotional core that influences its memory and responses.
 
-Rebuilt: 2025-09-13
+## Setup
 
-## Structure
-- persona/system_prompt.txt|py — your directive seed
-- engine/ — loop, memory, style, reflection, retriever
-- vault/ — drop your reference files here (.txt, .md, .json)
-- logs/ — JSONL transcript per run
-- memory/state.json — compact truths/motifs/callbacks
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/several-dozen-lizards/KZR.git](https://github.com/several-dozen-lizards/KZR.git)
+    cd KZR
+    ```
 
-## Run
-PowerShell:
-```
-$env:OPENAI_API_KEY="sk-..."; python app.py
-```
-CMD (set once per window):
-```
-set OPENAI_API_KEY=sk-...
-python app.py
-```
+2.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-## Import on the fly
-In the chat, type:
-```
-/import C:\path\to\file.txt
-```
-The file is copied into `vault/` and the index is rebuilt.
+3.  **Set up environment variables:**
+    -   Copy the example `.env.example` file to a new file named `.env`.
+    -   Open the `.env` file and add your OpenAI API key:
+        ```
+        OPENAI_API_KEY="sk-your-key-here"
+        LLM_NAME="Kay"
+        ```
+
+## Running the AI
+
+Once setup is complete, run the main script from your terminal:
+```bash
+python main.py

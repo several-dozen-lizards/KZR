@@ -15,7 +15,7 @@ class MemorySystem:
             "timestamp": datetime.datetime.now().isoformat(),
             "user_text": user_text,
             "ai_text": ai_text,
-            "emotion_cocktail": emotional_cocktail
+            "emotion_a": emotional_cocktail
         }
         with open(self.memory_path, 'a') as f:
             f.write(json.dumps(memory_entry) + '\n')
