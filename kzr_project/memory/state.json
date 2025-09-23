@@ -1,0 +1,13 @@
+{
+    "emotion_state": {
+        "cocktail": {
+            "Surprise": 6,
+            "Relief": 4,
+            "Gratitude": 5,
+            "Curiosity": 8,
+            "Excitement": 6
+        },
+        "dominant_emotion": "Curiosity",
+        "duration": 3
+    }
+}
