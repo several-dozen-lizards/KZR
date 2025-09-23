@@ -28,3 +28,4 @@ KZR is a conversational AI with an emotional core that influences its memory and
 Once setup is complete, run the main script from your terminal:
 ```bash
 python main.py
+
