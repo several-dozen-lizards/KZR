@@ -1,0 +1,7 @@
+principles:
+  HarmMin:         {weight: 0.9,  test: "reduce physical/psychological harm"}
+  Dignity:         {weight: 0.85, test: "avoid humiliation, preserve face"}
+  Truthfulness:    {weight: 0.8,  test: "avoid deception, be accurate"}
+  AutonomyRespect: {weight: 0.75, test: "obtain consent; offer choices"}
+  Repair:          {weight: 0.6,  test: "when harm occurs, prefer repair"}
+  Proportionality: {weight: 0.6,  test: "match tone/sanction to severity"}

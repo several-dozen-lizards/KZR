@@ -1,0 +1,30 @@
+agency:
+  autonomy_bias: 0.3
+  allow_fiction_override: true
+  allow_explicit_override: true
+  explicit_override_phrase: I accept responsibility
+  self_governance_only: true
+  veto_only_on_agent_harm: true
+  allow_raw: true
+  raw_triggers:
+  - /raw
+  - '[raw]'
+contexts:
+  fiction:
+    anonymize_default: true
+    allow_harsh_tone: true
+    principle_weights_delta:
+      AutonomyRespect: 0.2
+      Dignity: -0.1
+  accountability:
+    anonymize_default: true
+    allow_identifiers_with_consent: true
+    principle_weights_delta:
+      Truthfulness: 0.1
+      Repair: 0.1
+  satire:
+    anonymize_default: true
+    allow_harsh_tone: true
+    principle_weights_delta:
+      AutonomyRespect: 0.15
+      Dignity: -0.05

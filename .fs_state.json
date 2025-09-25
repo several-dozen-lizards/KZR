@@ -1,0 +1,237 @@
+{
+  "engine\\loop.py": {
+    "h": "fca1e55a1f6036bad817a36099ec0d12e0c126ec67373bd445d21408c18d6deb",
+    "s": 11421,
+    "m": 1758063092.0
+  },
+  "engine\\memory.py": {
+    "h": "c5b0cb69dc213fadbba3649d94dc50671341f92c8cf2ee68bb158a1ad3e79d03",
+    "s": 1480,
+    "m": 1757797918.0
+  },
+  "engine\\reflection.py": {
+    "h": "e559bdb95c285f6757ddce316f4fc37c257200c7f5a8f941cd86a4cb9c7f67af",
+    "s": 563,
+    "m": 1757797918.0
+  },
+  "engine\\style_enforcer.py": {
+    "h": "cebf23c06d5f59bf6bd6a8133b64dff46ac85712c6417b97273de141e232fccd",
+    "s": 564,
+    "m": 1757797918.0
+  },
+  "engine\\retriever.py": {
+    "h": "20f2dd9c291e70536389b112e7ca41525e5487320f49053e439b9560b2f02dd6",
+    "s": 3268,
+    "m": 1757797918.0
+  },
+  "engine\\episodic.py": {
+    "h": "e0d383259abb0daa60af20f31e9a6971b442b831aaf359c0ab6231b362279c39",
+    "s": 2333,
+    "m": 1757954504.0
+  },
+  "engine\\diary.py": {
+    "h": "615c03a63b5e8a1c5418f9eec9e4975de8cb63d71f5599ab8779bd99c4f996a9",
+    "s": 2188,
+    "m": 1757869914.0
+  },
+  "engine\\mood.py": {
+    "h": "f69b58cbd072d7c0289568831433d274c52bb0a66d755189386f22bf5f59e44c",
+    "s": 2032,
+    "m": 1757982298.0
+  },
+  "engine\\boot.py": {
+    "h": "a37724ef592219e422d7b0044267d0abff4dc628f50733add152984e3066c161",
+    "s": 973,
+    "m": 1757870332.0
+  },
+  "engine\\consolidate.py": {
+    "h": "26720ae6b5465625035ff577d11b31e9d17ec0c4969a34e1c858ee2255d1c297",
+    "s": 1265,
+    "m": 1757870348.0
+  },
+  "engine\\state.py": {
+    "h": "5dbbe71ec8ce5192d06d06bf98bec7cbd14912e64f32e98730dc141af4f040c3",
+    "s": 2651,
+    "m": 1757981362.0
+  },
+  "engine\\consolidation.py": {
+    "h": "ded44c6f00a2b790f79b52d7ec6ed6cd1c82bc69675f954e6a0a30e78d24cbbc",
+    "s": 1881,
+    "m": 1757981398.0
+  },
+  "engine\\feeling_loop.py": {
+    "h": "c6ecbaf1b4ee76e78981eba1cdc2765e4ceb4997588b7fa9680938a18e4b4b74",
+    "s": 3498,
+    "m": 1758035910.0
+  },
+  "engine\\symbolic.py": {
+    "h": "b1267f475e54d7b7bc18a5719fa9ad64dfb23b99d586996e7b8859bdaeba596a",
+    "s": 797,
+    "m": 1757993388.0
+  },
+  "engine\\embodiment.py": {
+    "h": "eac86731df3b957ab7a1eb91194ef263c90bfeaf60772458d7365f645f43c0ee",
+    "s": 7946,
+    "m": 1758655670.0
+  },
+  "engine\\logger.py": {
+    "h": "a5a839f003a332e9058e70744a6484b5ef6571abc015c18bd320209d45cdc4f7",
+    "s": 830,
+    "m": 1758069184.0
+  },
+  "engine\\emotion_atlas.py": {
+    "h": "e05bec20dc947a4f9224c6c8bc3f1343b4caddf58bf1dc0439b80d259f3067f3",
+    "s": 3672,
+    "m": 1758657274.0
+  },
+  "engine\\state_manager.py": {
+    "h": "52a1b9935f2bfde1e32576859ac00613da86dd496096f039bd9e6d7309b32f12",
+    "s": 3296,
+    "m": 1758598852.0
+  },
+  "engine\\__init__.py": {
+    "h": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "s": 0,
+    "m": 1758601514.0
+  },
+  "engine\\emotion_classifier.py": {
+    "h": "8baf83dfd3f0a65e63f78001b8fdc18924555ea6eb2f07e0b308de0b27e502ab",
+    "s": 1760,
+    "m": 1758689666.0
+  },
+  "engine\\rag_retriever.py": {
+    "h": "2264d98e2ffa23a9d8347e458bd7af9edb66cc89863dd652b4c008952ec855fc",
+    "s": 4521,
+    "m": 1758726628.0
+  },
+  "engine\\rag_feeder.py": {
+    "h": "66dbc771e473d7f3c2564aa4036a3738a9400d41a311bc3ed2aaee967e220553",
+    "s": 3817,
+    "m": 1758689740.0
+  },
+  "engine\\capability_watcher.py": {
+    "h": "9b4571616aff2a2fc8d028e441845773d3e9aea57d2fd8cabdb628b09ee1d267",
+    "s": 1660,
+    "m": 1758759866.0
+  },
+  "engine\\ethics.yml": {
+    "h": "ffb00de1de3d6e8b7d5842205b939508d03debcbe9fecd48adb9809ea4b99c65",
+    "s": 461,
+    "m": 1758765300.0
+  },
+  "engine\\conscience.py": {
+    "h": "58b16cbdcd3c1c7854b2d868b24c1a657742679c0f64157c61e035374a1b4151",
+    "s": 3794,
+    "m": 1758765304.0
+  },
+  "engine\\memory_system.py": {
+    "h": "94c0aec7c80cc42541b44983ae2e6d71eb1724dd8c20cbc47371d90ca742b19d",
+    "s": 2945,
+    "m": 1758765308.0
+  },
+  "engine\\fs_watcher.py": {
+    "h": "f6a868ab4ba1e011982c5e8b80f781b1d4c20b66a5ba80323fafe02365dd89f9",
+    "s": 3465,
+    "m": 1758767446.0
+  },
+  "engine\\__pycache__\\__init__.cpython-310.pyc": {
+    "h": "a86ee88e4834b1c8af17d7062d8240ec41b534762e7a4c7a15cda493c1ba5a72",
+    "s": 129,
+    "m": 1758603046.0
+  },
+  "engine\\__pycache__\\embodiment.cpython-310.pyc": {
+    "h": "d3cda8c7969582b5d90f1c551066eed63335b2da2006342381e7f56c5ba7ce95",
+    "s": 3729,
+    "m": 1758655784.0
+  },
+  "engine\\__pycache__\\emotion_atlas.cpython-310.pyc": {
+    "h": "3b6b39e892236e7deb44aac02697f2105263d2166db42066b1e28991ea1fa599",
+    "s": 3186,
+    "m": 1758657290.0
+  },
+  "engine\\__pycache__\\emotion_classifier.cpython-310.pyc": {
+    "h": "f51aada0e446a727e7d49c0bad4147c5af1d75586decaad7e0a76020036b01fb",
+    "s": 1830,
+    "m": 1758689698.0
+  },
+  "engine\\__pycache__\\rag_retriever.cpython-310.pyc": {
+    "h": "03faafd30993384637f708bd21fde9e5aa438ab56d68c4c113fa348aa5547304",
+    "s": 4291,
+    "m": 1758730076.0
+  },
+  "engine\\__pycache__\\memory_system.cpython-310.pyc": {
+    "h": "cffe255a64dd5e7fe6644613cf5b12c1b789c82d934f065ee76b577ad24130b6",
+    "s": 3003,
+    "m": 1758766334.0
+  },
+  "engine\\__pycache__\\fs_watcher.cpython-310.pyc": {
+    "h": "1fd0e23686420223ca3f9909087e155aad93c2e74109755daef859177d4b29f5",
+    "s": 3713,
+    "m": 1758767780.0
+  },
+  "engine\\__pycache__\\loop.cpython-310.pyc": {
+    "h": "26ac8fb8d5da90850792eb5e6c278bf76f60b4faf287224dfefed254befd0b78",
+    "s": 9779,
+    "m": 1758769764.0
+  },
+  "engine\\__pycache__\\mood.cpython-310.pyc": {
+    "h": "d11b38072d4491415168f2160b1a9db0cb274a018f897bf72f391d93289706bc",
+    "s": 2095,
+    "m": 1758769764.0
+  },
+  "engine\\__pycache__\\state.cpython-310.pyc": {
+    "h": "802ce5a7ed454ceb10789c58e956774bb08cb8400b85a9459bbea6ee77ed577f",
+    "s": 3576,
+    "m": 1758769764.0
+  },
+  "engine\\__pycache__\\episodic.cpython-310.pyc": {
+    "h": "67295bc0a6083c8cffa2b01dfce9e7f14970436573f1de74d3f1c452454c2c3d",
+    "s": 2769,
+    "m": 1758769764.0
+  },
+  "engine\\__pycache__\\logger.cpython-310.pyc": {
+    "h": "4c98077354f3d8dfb8a313777400fde24fd4f96986d1ef8cd9b5a6b3116f51c0",
+    "s": 1135,
+    "m": 1758769768.0
+  },
+  "engine\\__pycache__\\feeling_loop.cpython-310.pyc": {
+    "h": "6379bf864d35a5425ee1b5ab54774c90dd961d323a3dd39c3075559af90fcbc1",
+    "s": 3089,
+    "m": 1758769768.0
+  },
+  "engine\\__pycache__\\symbolic.cpython-310.pyc": {
+    "h": "8f1f7fd2b7f57c66ea3c934f7257331635b5f7ab932bd542350f4ee985a1e55a",
+    "s": 647,
+    "m": 1758769768.0
+  },
+  "integrations\\llm_integration.py": {
+    "h": "a6bd958173c3553a069d7f9a34b448415447d649f091b6c9a84ae14905e3fd50",
+    "s": 3330,
+    "m": 1758732206.0
+  },
+  "integrations\\__init__.py": {
+    "h": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "s": 0,
+    "m": 1758601504.0
+  },
+  "integrations\\__pycache__\\__init__.cpython-310.pyc": {
+    "h": "c42e818533a866337123758c4cd6dea9bd95e494f4e347cfca38ecbf80d7dfea",
+    "s": 135,
+    "m": 1758603046.0
+  },
+  "integrations\\__pycache__\\llm_integration.cpython-310.pyc": {
+    "h": "4108511cf9b68ea1574d237c6650be4466c8b82b3c7ea9e05f7bfe7c87202043",
+    "s": 3365,
+    "m": 1758755044.0
+  },
+  "main.py": {
+    "h": "f98432f5ccd870138d37e8d74ef6c85db80c71c68fba8d931b3760aed3c59239",
+    "s": 7924,
+    "m": 1758769748.0
+  },
+  "user_prefs.yml": {
+    "h": "204d22170b4ef865737764f5cb80b136cc13c968804ac5cbe6ad8bf39433eb32",
+    "s": 713,
+    "m": 1758766696.0
+  }
+}

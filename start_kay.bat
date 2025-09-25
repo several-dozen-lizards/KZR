@@ -25,8 +25,12 @@ if exist "requirements.txt" (
   pip install -r requirements.txt
 ) else (
   echo [KayZero] Installing default dependencies...
-  pip install fastapi uvicorn[standard] pydantic openai python-docx chromadb
+  pip install fastapi uvicorn[standard] pydantic openai python-docx python-multipart
 )
+
+:: Ensure episodic backend present (force install chromadb)
+echo [KayZero] Ensuring episodic memory backend (chromadb)...
+pip install --upgrade chromadb
 
 :: Load .env if present (trims spaces and strips quotes)
 if exist ".env" (

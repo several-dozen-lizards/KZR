@@ -41,10 +41,6 @@ class MemorySystem:
         scored_memories = []
         for mem in memories:
             score = 0
-            try:
-                score *= (1 + self.gamma_moral * ep.get('moral_weight', 0.0))
-            except Exception:
-                pass
             if current_cocktail and mem.get("emotion_cocktail"):
                 # If cocktail uses the new {'intensity': ..., 'age': ...} structure:
                 for emotion, state in current_cocktail.items():

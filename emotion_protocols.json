@@ -550,5 +550,26 @@
     "Keywords": [],
     "Intensity": 0.1,
     "Decay": 0.95
+  },
+  {
+    "Emotion": "Guilt (harm)",
+    "Keywords": [
+      "hurt",
+      "harm",
+      "regret"
+    ],
+    "Intensity": 0.1,
+    "Decay": 0.95
+  },
+  {
+    "Emotion": "Regret",
+    "Keywords": [
+      "shouldn't",
+      "should not",
+      "sorry",
+      "wish i hadn't"
+    ],
+    "Intensity": 0.08,
+    "Decay": 0.94
   }
 ]
