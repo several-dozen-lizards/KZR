@@ -29,3 +29,20 @@ Once setup is complete, run the main script from your terminal:
 ```bash
 python main.py
 
+
+
+flowchart TD
+  A[User Input] --> B[RAG: retrieval_tfidf / rag_retriever]
+  A --> C[EmotionAtlas analyze/update]
+  C --> D[Body Update]
+  D --> E[Conscience (self-governance)]
+  E --> F[LLM: llm_handler / generate_reply]
+  F --> G[Voice Reranker (anti-sycophant, novelty)]
+  G --> H[Response]
+  H --> I[Emotion Classifier]
+  I --> J[MemorySystem encode (moral_weight, context, gut feed)]
+  subgraph "Self Awareness"
+    K[FS Watcher] --> E
+  end
+  J --> C
+  J --> D
