@@ -20,9 +20,9 @@
     "m": 1757797918.0
   },
   "engine\\retriever.py": {
-    "h": "20f2dd9c291e70536389b112e7ca41525e5487320f49053e439b9560b2f02dd6",
-    "s": 3268,
-    "m": 1757797918.0
+    "h": "7573d10681b0bbe90083d2302cebb5efa69a9ef8b8f9f6d71580b01ac56e3f7f",
+    "s": 833,
+    "m": 1758838008.0
   },
   "engine\\episodic.py": {
     "h": "e0d383259abb0daa60af20f31e9a6971b442b831aaf359c0ab6231b362279c39",
@@ -70,9 +70,9 @@
     "m": 1757993388.0
   },
   "engine\\embodiment.py": {
-    "h": "eac86731df3b957ab7a1eb91194ef263c90bfeaf60772458d7365f645f43c0ee",
-    "s": 7946,
-    "m": 1758655670.0
+    "h": "e6718ff3ecb46964aa57f983513687efd1e9b8db48f8b00751a273f2636ceff3",
+    "s": 8351,
+    "m": 1758898758.0
   },
   "engine\\logger.py": {
     "h": "a5a839f003a332e9058e70744a6484b5ef6571abc015c18bd320209d45cdc4f7",
@@ -125,24 +125,49 @@
     "m": 1758765304.0
   },
   "engine\\memory_system.py": {
-    "h": "94c0aec7c80cc42541b44983ae2e6d71eb1724dd8c20cbc47371d90ca742b19d",
-    "s": 2945,
-    "m": 1758765308.0
+    "h": "ce1ceb7633303b5ebd8cbbf250a02a7fd07919eaf53c41c30853c7a4d2cd4c0f",
+    "s": 3953,
+    "m": 1758905354.0
   },
   "engine\\fs_watcher.py": {
     "h": "f6a868ab4ba1e011982c5e8b80f781b1d4c20b66a5ba80323fafe02365dd89f9",
     "s": 3465,
     "m": 1758767446.0
   },
+  "engine\\gut.py": {
+    "h": "b4efadff3f24ba25d5c2f1516940a36fd03ec401e57b3d39ae01761805555b22",
+    "s": 1411,
+    "m": 1758822464.0
+  },
+  "engine\\chakra_engine.py": {
+    "h": "9362237835f4d92704707eae2e2dec2eb7f35ebff4f215a684aa3bf237df4bcd",
+    "s": 2371,
+    "m": 1758838012.0
+  },
+  "engine\\social_morality.py": {
+    "h": "ec16376e02a95d2a2a70e19dbef4c19ed0441527f8b567561eea680896089e42",
+    "s": 1479,
+    "m": 1758838018.0
+  },
+  "engine\\kay_process_flowchart.png": {
+    "h": "d98f628853b7b949d9d85c6e5cba78ff98063141826c7eb09840df3344f23f2e",
+    "s": 17772,
+    "m": 1758830816.0
+  },
+  "engine\\orchestrator.py": {
+    "h": "57df84818f75b3831a53cfa3d164b31489aa6f79867331b16d942b6725e079b2",
+    "s": 1679,
+    "m": 1758838004.0
+  },
+  "engine\\chakra_map.yml": {
+    "h": "c3a375d5e37905e4ff36cea456fec416d99e696d007d6daccff7ad9f26b1ca8d",
+    "s": 295,
+    "m": 1758838022.0
+  },
   "engine\\__pycache__\\__init__.cpython-310.pyc": {
     "h": "a86ee88e4834b1c8af17d7062d8240ec41b534762e7a4c7a15cda493c1ba5a72",
     "s": 129,
     "m": 1758603046.0
-  },
-  "engine\\__pycache__\\embodiment.cpython-310.pyc": {
-    "h": "d3cda8c7969582b5d90f1c551066eed63335b2da2006342381e7f56c5ba7ce95",
-    "s": 3729,
-    "m": 1758655784.0
   },
   "engine\\__pycache__\\emotion_atlas.cpython-310.pyc": {
     "h": "3b6b39e892236e7deb44aac02697f2105263d2166db42066b1e28991ea1fa599",
@@ -158,11 +183,6 @@
     "h": "03faafd30993384637f708bd21fde9e5aa438ab56d68c4c113fa348aa5547304",
     "s": 4291,
     "m": 1758730076.0
-  },
-  "engine\\__pycache__\\memory_system.cpython-310.pyc": {
-    "h": "cffe255a64dd5e7fe6644613cf5b12c1b789c82d934f065ee76b577ad24130b6",
-    "s": 3003,
-    "m": 1758766334.0
   },
   "engine\\__pycache__\\fs_watcher.cpython-310.pyc": {
     "h": "1fd0e23686420223ca3f9909087e155aad93c2e74109755daef859177d4b29f5",
@@ -204,6 +224,31 @@
     "s": 647,
     "m": 1758769768.0
   },
+  "engine\\__pycache__\\orchestrator.cpython-310.pyc": {
+    "h": "308d74b904952b539c3171a4bf538681fdc87133415386ffb1e46e2054a65fce",
+    "s": 1514,
+    "m": 1758842682.0
+  },
+  "engine\\__pycache__\\retriever.cpython-310.pyc": {
+    "h": "e5029bc25ecf598fe6563eeff837da4cbe400d30be53c44705b5fb66242abc50",
+    "s": 837,
+    "m": 1758842682.0
+  },
+  "engine\\__pycache__\\chakra_engine.cpython-310.pyc": {
+    "h": "7f006bb015aabbe5a798ce4fdc71c067e774048b48b14a22fc9c3244064f335b",
+    "s": 2929,
+    "m": 1758842682.0
+  },
+  "engine\\__pycache__\\embodiment.cpython-310.pyc": {
+    "h": "1caacd2d4451b6277d5dcfdf52984d6d10d94b5815dff302dec76844fb739aa7",
+    "s": 4166,
+    "m": 1758899492.0
+  },
+  "engine\\__pycache__\\memory_system.cpython-310.pyc": {
+    "h": "300ab9de3d430720cd72ca35bd5b910c092a2d112dfa2d83ddc89a0ff8fe6890",
+    "s": 3940,
+    "m": 1758911348.0
+  },
   "integrations\\llm_integration.py": {
     "h": "a6bd958173c3553a069d7f9a34b448415447d649f091b6c9a84ae14905e3fd50",
     "s": 3330,
@@ -225,9 +270,9 @@
     "m": 1758755044.0
   },
   "main.py": {
-    "h": "f98432f5ccd870138d37e8d74ef6c85db80c71c68fba8d931b3760aed3c59239",
-    "s": 7924,
-    "m": 1758769748.0
+    "h": "3b53004e5d3f10e2d7e0096f7fcf40680148cecb8559d27b2451a390067f82cd",
+    "s": 13687,
+    "m": 1758899394.0
   },
   "user_prefs.yml": {
     "h": "204d22170b4ef865737764f5cb80b136cc13c968804ac5cbe6ad8bf39433eb32",

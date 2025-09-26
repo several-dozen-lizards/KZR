@@ -3,12 +3,48 @@ import datetime
 import os
 import config
 
+class NeuromodState:
+    def __init__(self):
+        self.dopamine = 0.5
+        self.serotonin = 0.5
+        self.oxytocin = 0.5
+        self.cortisol = 0.5
+        self.social_need = 0.5
+        self.social_setpoint = 0.65
+        self.social_decay = 0.98
+        self.social_cooldown = 0
+
+    def update_social_need(self, event):
+        TRIGGER_MAP = {
+            "accepted": 0.2,
+            "praised": 0.15,
+            "reciprocated": 0.1,
+            "ignored": -0.2,
+            "rejected": -0.3,
+            "humiliated": -0.35,
+            "belonging affirmed": 0.25,
+        }
+        delta = TRIGGER_MAP.get(event, 0)
+        self.social_need = min(max(self.social_need + delta, 0), 1)
+        # decay toward setpoint
+        self.social_need += (self.social_setpoint - self.social_need) * (1 - self.social_decay)
+        # cooldown logic
+        if event in ["ignored", "rejected", "humiliated"]:
+            self.social_cooldown = 3
+        elif event in ["accepted", "praised", "reciprocated", "belonging affirmed"]:
+            self.social_cooldown = max(self.social_cooldown - 1, 0)
+
+
+
+
 class MemorySystem:
     """Simulates a memory system with emotional tagging and biased retrieval."""
 
     def __init__(self, memory_path=config.LONG_TERM_MEMORY_PATH):
         self.memory_path = memory_path
+        self.neuromod = NeuromodState()
 
+      
     def encode_memory(self, user_text, ai_text, emotional_cocktail, emotion_inferred=None):
         if emotional_cocktail:
             dominant_emotion = max(
@@ -41,10 +77,6 @@ class MemorySystem:
         scored_memories = []
         for mem in memories:
             score = 0
-            try:
-                score *= (1 + self.gamma_moral * ep.get('moral_weight', 0.0))
-            except Exception:
-                pass
             if current_cocktail and mem.get("emotion_cocktail"):
                 # If cocktail uses the new {'intensity': ..., 'age': ...} structure:
                 for emotion, state in current_cocktail.items():
@@ -64,3 +96,4 @@ class MemorySystem:
             return [mem for score, mem in scored_memories[:num_memories]]
         else:
             return []
+

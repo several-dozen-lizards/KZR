@@ -91,7 +91,14 @@
   "Sanctity": 0.0,
   "Bliss": 0.0,
   "Mystery (cosmic)": 0.0,
-  "Fondness": 1.4000000000000006,
-  "Comforted": 0.39999999999999997,
-  "Shame": -0.05
+  "Fondness": 2.2,
+  "Comforted": 0.49999999999999994,
+  "Shame": -0.05,
+  "Belonging": 0.2,
+  "Acceptance": 0.15,
+  "Camaraderie": 0.1,
+  "Loneliness": 0.0,
+  "Rejection": 0.0,
+  "Humiliation": 0.0,
+  "Respect": 0.05
 }

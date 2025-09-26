@@ -60,3 +60,11 @@ def generate_reply(messages: List[Dict[str,str]], feelings: Dict[str,float] | No
     text = rsp.choices[0].message.content
     log_message("assistant", text)
     return text
+
+def initiative_bonus(neuromod, candidate):
+    # Higher when social_need is low (system wants connection)
+    # Lower when high (system can "rest" or savor)
+    bonus = (1 - neuromod.social_need) * 0.3
+    if candidate.text.strip().endswith("?") and neuromod.social_need > 0.75:
+        bonus -= 0.1
+    return bonus

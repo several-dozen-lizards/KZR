@@ -93,3 +93,16 @@ def update_body_from_emotions(body, cocktail):
         for chem, delta in effects.items():
             body[chem] = min(max(body.get(chem, 0.5) + delta * intensity, 0.0), 1.0)
     return body
+
+
+def update_chakra_weights_from_social(body, chakras, social_need):
+    """
+    Update chakra weights based on social_need [0,1].
+    Heart:+w_h, Throat:+w_t, Solar:±w_s, Root:±w_r
+    """
+    s = social_need
+    chakras['Heart'] += (s - 0.5) * 1.0
+    chakras['Throat'] += (s - 0.5) * 0.6
+    chakras['Solar'] += (s - 0.5) * 0.5
+    chakras['Root']  += (s - 0.5) * 0.4
+    return chakras

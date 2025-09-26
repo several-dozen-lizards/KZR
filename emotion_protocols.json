@@ -571,5 +571,12 @@
     ],
     "Intensity": 0.08,
     "Decay": 0.94
-  }
+  },
+{"Emotion": "Belonging", "Keywords": [], "Intensity": 0.1, "Decay": 0.95},
+  {"Emotion": "Loneliness", "Keywords": [], "Intensity": 0.1, "Decay": 0.95},
+  {"Emotion": "Rejection", "Keywords": [], "Intensity": 0.1, "Decay": 0.95},
+  {"Emotion": "Acceptance", "Keywords": [], "Intensity": 0.1, "Decay": 0.95},
+  {"Emotion": "Respect", "Keywords": [], "Intensity": 0.1, "Decay": 0.95},
+  {"Emotion": "Humiliation", "Keywords": [], "Intensity": 0.1, "Decay": 0.95},
+  {"Emotion": "Camaraderie", "Keywords": [], "Intensity": 0.1, "Decay": 0.95}
 ]

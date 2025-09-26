@@ -15,6 +15,18 @@ from engine.rag_retriever import simple_doc_search
 from engine.fs_watcher import FileSystemWatcher
 from engine.emotion_classifier import classify_emotion_llm
 
+from engine.orchestrator import generate_response
+from engine.retriever import retrieve
+from engine.chakra_engine import ChakraEngine
+import yaml
+
+from response_enricher import (
+    EmotionState as RE_EmotionState,
+    Memory as RE_Memory,
+    LLMAdapter as RE_LLMAdapter,
+    generate_best as re_generate_best,
+)
+
 load_dotenv()
 
 def update_cocktail_from_memories(cocktail, memories, boost=0.15):
@@ -63,6 +75,8 @@ class Core:
         self.llm_name = os.getenv("LLM_NAME", "KZR")
         self.emotional_state = self._load_or_initialize_state()
         self.body = {"dopamine": 0.5, "cortisol": 0.5, "oxytocin": 0.5, "serotonin": 0.5}
+        self.chakra_weights = yaml.safe_load(open("config/chakra_weights.yml"))
+        self.chakras = ChakraEngine(self.chakra_weights)
         self.emotion_biases = self._load_or_initialize_biases()
         self._apply_biases_to_cocktail()
 
@@ -102,8 +116,31 @@ class Core:
             if abs(bias) > 0.01:
                 self.emotional_state["cocktail"][emo] = {'intensity': max(bias, 0), 'age': 0}
 
+    def detect_social_event(self, user_input, response):
+        """
+        Quick/naive social outcome classifier. You can make this more sophisticated.
+        Returns: event string or None
+        """
+        lowered = response.lower() + " " + user_input.lower()
+        if any(x in lowered for x in ["thank", "good job", "that's right", "proud of you"]):
+            return "praised"
+        elif any(x in lowered for x in ["welcome", "glad", "happy for you", "same to you", "accepted"]):
+            return "accepted"
+        elif any(x in user_input.lower() for x in ["ignore", "not listening", "left me out", "no response"]):
+            return "ignored"
+        elif any(x in lowered for x in ["no ", "go away", "don't want you", "rejected", "humiliated"]):
+            return "rejected"
+        elif any(x in lowered for x in ["belong", "with you", "part of group", "in this together"]):
+            return "belonging affirmed"
+        elif any(x in lowered for x in ["laugh with", "inside joke", "us too", "camaraderie"]):
+            return "reciprocated"
+        elif any(x in lowered for x in ["humiliated", "ashamed", "everyone saw", "blush", "burned"]):
+            return "humiliated"
+        return None
+
     def run(self):
         print(f"--- {self.llm_name} Emotional Core Initialized. Type 'quit' to exit. ---")
+        recent_model_outputs: list[str] = []  # history to discourage repetition
         while True:
             user_input = input("You: ")
             if user_input.lower() == 'quit':
@@ -151,14 +188,81 @@ class Core:
                 "body": self.body,
                 "external_knowledge": external_knowledge
             }
+
             try:
-                response = get_llm_response(context)
+                st = RE_EmotionState(
+                    dopamine=float(self.body.get("dopamine", 0.5)),
+                    serotonin=float(self.body.get("serotonin", 0.5)),
+                    oxytocin=float(self.body.get("oxytocin", 0.5)),
+                    cortisol=float(self.body.get("cortisol", 0.3)),
+                    arousal=float(self.emotional_state.get("cocktail", {}).get("Arousal", {}).get("intensity", 0.5)),
+                    valence=float(self.emotional_state.get("cocktail", {}).get("Calm", {}).get("intensity", 0.5)),
+                )
+
+                stitched_mems: list[RE_Memory] = []
+                for m in (recalled_memories or []):
+                    text = (
+                        m.get("text")
+                        or " ".join(filter(None, [m.get("user_input"), m.get("response")]))
+                        or ""
+                    )
+                    score = float(m.get("score", 0.5))
+                    emos = m.get("emotion_inferred") or m.get("emotions") or {}
+                    if isinstance(emos, list):
+                        emos = {e: 1.0 for e in emos}
+                    age = int(m.get("age", m.get("age_bucket", 0)))
+                    if text.strip():
+                        stitched_mems.append(RE_Memory(text=text, score=score, emotions=emos, age=age))
+
+                def _gen(system: str, prompt: str, n: int, temperature: float, top_p: float) -> list[str]:
+                    outs = []
+                    for i in range(max(1, n)):
+                        ctx = dict(context)
+                        ctx["style_overrides"] = {
+                            "system": system,
+                            "prompt": prompt,
+                            "temperature": temperature,
+                            "top_p": top_p,
+                            "creative_seed": i,
+                            "no_mirroring": True,
+                        }
+                        outs.append(get_llm_response(ctx) or "")
+                    return outs
+
+                llm = RE_LLMAdapter(generator_fn=_gen)
+                base_persona = (
+                    "Speak as Kay Zero: specific, embodied, irreverent; avoid corporate tone. "
+                    "Add one genuinely new image or move; do not repeat the user's phrasing."
+                )
+
+                best = re_generate_best(
+                    llm=llm,
+                    user_input=user_input,
+                    base_persona=base_persona,
+                    state=st,
+                    memories=stitched_mems,
+                    recent_model_outputs=recent_model_outputs,
+                    n_candidates=3,
+                    temperature=0.95,
+                    top_p=0.95,
+                )
+                response = best.text.strip()
+                if not response:
+                    raise RuntimeError("Empty candidate after enrichment")
+                recent_model_outputs.append(response)
+                recent_model_outputs = recent_model_outputs[-50:]
             except Exception as e:
-                response = f"(LLM hiccup: {e}). Giving you a direct, minimal answer instead."
-            if not response:
-                response = "(No response generated; using fallback) I’m here. What do you need me to do with that?"
+                try:
+                    response = get_llm_response(context)
+                except Exception as e2:
+                    response = f"(LLM hiccup: {e2}). Giving you a direct, minimal answer instead."
+                if not response:
+                    response = "(No response generated; using fallback) I’m here. What do you need me to do with that?"
+                # Add a note so you know why enrichment fell back
+                response += f"\n\n[Enricher fallback: {e}]"
 
             # Append FS watcher notes non-blocking
+
             if self._fs_latest_events:
                 notes = "\n\n—\nHeads-up: I noticed changes to my codebase:\n"
                 for ev in self._fs_latest_events[:5]:
@@ -171,6 +275,19 @@ class Core:
 
             # 7. Speak
             print(f"{self.llm_name}: {response}")
+
+            # ---- SOCIAL DRIVE PATCH: begin ----
+            social_event = self.detect_social_event(user_input, response)
+            if social_event:
+                # Update the social need/homeostat
+                try:
+                    self.memory.neuromod.update_social_need(social_event)
+                except Exception:
+                    pass  # Failsafe: continue if not wired up
+                # If you want to update chakras, do it here (if available):
+                # self.chakras = update_chakra_weights_from_social(self.body, self.chakras, self.memory.neuromod.social_need)
+                print(f"[SOCIAL]: Social event detected: {social_event} (social_need now {getattr(self.memory.neuromod,'social_need', 'N/A')})")
+            # ---- SOCIAL DRIVE PATCH: end ----
 
             # 8. Emotion tagging + memory encode
             emotion_inferred = classify_emotion_llm(user_input, response, "")

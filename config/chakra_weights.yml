@@ -1,0 +1,83 @@
+RED:
+  emotions_pos:
+    Calm: 0.3
+    Pride: 0.2
+  emotions_neg:
+    Anxiety: 0.5
+    Fear: 0.4
+    Anger: 0.2
+  body_pos:
+    serotonin: 0.2
+    oxytocin: 0.1
+  body_neg:
+    cortisol: 0.5
+  setpoint: 0.55
+ORANGE:
+  emotions_pos:
+    Curiosity: 0.25
+    Wonder: 0.25
+    Joy: 0.15
+  emotions_neg:
+    Anxiety: 0.2
+  body_pos:
+    dopamine: 0.2
+  body_neg: {}
+  setpoint: 0.55
+YELLOW:
+  emotions_pos:
+    Pride: 0.3
+    Hope: 0.2
+  emotions_neg:
+    Shame: 0.3
+    Sadness: 0.1
+  body_pos:
+    dopamine: 0.2
+  body_neg: {}
+  setpoint: 0.55
+GREEN:
+  emotions_pos:
+    Fondness: 0.3
+    Comforted: 0.25
+  emotions_neg:
+    Lonely: 0.25
+    Jealousy: 0.15
+  body_pos:
+    oxytocin: 0.25
+  body_neg:
+    cortisol: 0.1
+  setpoint: 0.6
+BLUE:
+  emotions_pos:
+    Clarity: 0.25
+    Calm: 0.15
+  emotions_neg:
+    Confusion: 0.3
+    Shame: 0.2
+  body_pos:
+    serotonin: 0.15
+  body_neg: {}
+  setpoint: 0.55
+INDIGO:
+  emotions_pos:
+    Wonder: 0.25
+    Curiosity: 0.25
+    Awe: 0.15
+  emotions_neg:
+    Anxiety: 0.1
+  body_pos:
+    dopamine: 0.1
+  body_neg: {}
+  setpoint: 0.55
+VIOLET:
+  emotions_pos:
+    Calm: 0.2
+    Pride: 0.1
+    Joy: 0.1
+  emotions_neg:
+    Shame: 0.2
+    Anxiety: 0.1
+  body_pos:
+    serotonin: 0.2
+  body_neg:
+    cortisol: 0.1
+  setpoint: 0.6
